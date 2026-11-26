@@ -1,5 +1,5 @@
-@font-face { font-family: "Melosta"; src: url("fonts/MelostaDemoRegular-8O0AB.ttf") format("truetype"); font-display: swap; }
-@font-face { font-family: "Geist Mono"; src: url("fonts/GeistMono-VariableFont_wght.ttf") format("truetype"); font-weight: 100 900; font-display: swap; }
+@font-face { font-family: "Melosta"; src: url("./MelostaDemoRegular-8O0AB.ttf") format("truetype"); font-display: swap; }
+@font-face { font-family: "Geist Mono"; src: url("./GeistMono-VariableFont_wght.ttf") format("truetype"); font-weight: 100 900; font-display: swap; }
 /* Layout (a partir del sistema de "Lo que queda"): barras fijas arriba y abajo, escenario a pantalla completa entre ellas,
    dock numerado a la derecha, lectura en vivo abajo a la izquierda, ventana de señal abajo a la derecha.
    Líneas de 1 px, sin esquinas redondeadas, grano fino. Verde oscuro con amarillo como acento. */
