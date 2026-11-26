@@ -14,26 +14,26 @@
   const MAR_RANDOM = "mar_random";
   const FER_RANDOM = "fer_random";
   const MAR_AUDIO_FILES = [
-    { id: "como_te_a_ido", file: "Audios/Mar/Como te a ido.wav" },
-    { id: "como_va_el_trabajo", file: "Audios/Mar/Como va el trabajo.wav" },
-    { id: "le_gusta_tejer", file: "Audios/Mar/Me gusta tejer.wav" },
-    { id: "me_cai_por_las_escaleras", file: "Audios/Mar/Me cai por las escaleras.wav" },
-    { id: "me_contrataron", file: "Audios/Mar/Me contrataron.wav" },
-    { id: "monos_de_papel", file: "Audios/Mar/Monos de papel.wav" },
-    { id: "renuncia", file: "Audios/Mar/Renuncia.wav" },
-    { id: "porque_te_senti_asi_oe", file: "Audios/Mar/Porque te sientes así.wav" },
+    { id: "como_te_a_ido", file: "./Como te a ido.wav" },
+    { id: "como_va_el_trabajo", file: "./Como va el trabajo.wav" },
+    { id: "le_gusta_tejer", file: "./Me gusta tejer.wav" },
+    { id: "me_cai_por_las_escaleras", file: "./Me cai por las escaleras.wav" },
+    { id: "me_contrataron", file: "./Me contrataron.wav" },
+    { id: "monos_de_papel", file: "./Monos de papel.wav" },
+    { id: "renuncia", file: "./Renuncia.wav" },
+    { id: "porque_te_senti_asi_oe", file: "./Porque te sientes así.wav" },
   ];
 
   const FER_AUDIO_FILES = [
-    { id: "amo_a_mi_familia", file: "Audios/Fer/Amo a mi familia.wav" },
-    { id: "ayude_a_un_amigo", file: "Audios/Fer/Ayude a un amigo.wav" },
-    { id: "como_estuvieron_clases", file: "Audios/Fer/Como estuvieron clases.wav" },
-    { id: "estoy_haciendo", file: "Audios/Fer/Estoy haciendo.wav" },
-    { id: "pero_luego_paso_que", file: "Audios/Fer/Pero luego paso que.wav" },
-    { id: "perra", file: "Audios/Fer/Ladrido.wav" },
-    { id: "que_bueno", file: "Audios/Fer/Que bueno.wav" },
-    { id: "que_penoso", file: "Audios/Fer/Que penoso.wav" },
-    { id: "que_sucede", file: "Audios/Fer/Que sucede.wav" },
+    { id: "amo_a_mi_familia", file: "./Amo a mi familia.wav" },
+    { id: "ayude_a_un_amigo", file: "./Ayude a un amigo.wav" },
+    { id: "como_estuvieron_clases", file: "./Como estuvieron clases.wav" },
+    { id: "estoy_haciendo", file: "./Estoy haciendo.wav" },
+    { id: "pero_luego_paso_que", file: "./Pero luego paso que.wav" },
+    { id: "perra", file: "./Ladrido.wav" },
+    { id: "que_bueno", file: "./Que bueno.wav" },
+    { id: "que_penoso", file: "./Que penoso.wav" },
+    { id: "que_sucede", file: "./Que sucede.wav" },
   ];
   const MASCULINE_AUDIO_IDS = new Set([
     "ayude_a_un_amigo", "como_estuvieron_clases", "que_penoso", "que_bueno",
@@ -96,27 +96,27 @@
   const openedFromFile = location.protocol === "file:";
   const localServerMessage = "Abre iniciar_servidor.bat para cargar el video y los audios.";
   video.muted = true; video.loop = true; video.playsInline = true;
-  video.src = new URL("Video/Arbusto.MP4", document.baseURI).href;
+  video.src = new URL("Arbusto.MP4", document.baseURI).href;
   if (openedFromFile) $("status").textContent = localServerMessage;
   video.addEventListener("loadeddata", () => {
     $("status").textContent = openedFromFile ? localServerMessage : "Video: Arbusto";
     prev = null;
   });
   video.addEventListener("error", () => {
-    const message = openedFromFile ? localServerMessage : "No se pudo cargar Video/Arbusto.MP4";
+    const message = openedFromFile ? localServerMessage : "No se pudo cargar Arbusto.MP4";
     $("status").textContent = message;
     toast(message);
   });
   video.play().catch((e) => {
     if (e.name === "AbortError") return;
-    console.error("No se pudo reproducir Video/Arbusto.MP4:", e);
-    $("status").textContent = "No se pudo reproducir Video/Arbusto.MP4";
-    toast("No se pudo reproducir Video/Arbusto.MP4");
+    console.error("No se pudo reproducir Arbusto.MP4:", e);
+    $("status").textContent = "No se pudo reproducir Arbusto.MP4";
+    toast("No se pudo reproducir Arbusto.MP4");
   });
   $("vPlay").addEventListener("click", () => {
     video.play().catch((e) => {
       if (e.name === "AbortError") return;
-      console.error("No se pudo reproducir Video/Arbusto.MP4:", e);
+      console.error("No se pudo reproducir Arbusto.MP4:", e);
       toast("No se pudo reproducir el video");
     });
   });
